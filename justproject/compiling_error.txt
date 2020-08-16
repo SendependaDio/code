@@ -1,0 +1,22 @@
+/home/wholeks/github/game/justproject/cls.h:5:3: error: ‘string’ does not name a type; did you mean ‘struct’?
+   string name;
+   ^~~~~~
+   struct
+/home/wholeks/github/game/justproject/cls.h:7:3: error: ‘string’ does not name a type; did you mean ‘struct’?
+   string grant;
+   ^~~~~~
+   struct
+/home/wholeks/github/game/justproject/cls.h: In member function ‘void Result::read_Result()’:
+/home/wholeks/github/game/justproject/cls.h:10:7: error: ‘cout’ was not declared in this scope
+       cout << "Количество набранных баллов на ЕНТ: " << ent << ";" << endl;
+       ^~~~
+/home/wholeks/github/game/justproject/cls.h:10:101: error: ‘endl’ was not declared in this scope
+       cout << "Количество набранных баллов на ЕНТ: " << ent << ";" << endl;
+                                                                                                     ^~~~
+/home/wholeks/github/game/justproject/cls.h:10:101: note: suggested alternative: ‘ent’
+       cout << "Количество набранных баллов на ЕНТ: " << ent << ";" << endl;
+                                                                                                     ^~~~
+                                                                                                     ent
+/home/wholeks/github/game/justproject/cls.h:11:33: error: ‘grant’ was not declared in this scope
+       cout << "Грант: " << grant << ";" << endl;
+                                 ^~~~~
