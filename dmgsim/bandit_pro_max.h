@@ -3,8 +3,8 @@ using namespace std;
 
 class Bandit_Pro_Max{
 public:
-  string name = "Бандит, который сделает тебя чмом";
-  int HP = 40;
+  string name = "бандит, который сделает тебя чмом";
+  int HP = 75;
   string weapon = "острый меч";
   int dmg = 10;
 
@@ -13,9 +13,5 @@ public:
     cout << "Количество HP: " << HP << ";" << endl;
     cout << "Оружие: " << weapon << ";" << endl;
     cout << "Урон: " << dmg << ";" << endl;
-  }
-
-  void relife(){
-    HP = 40;
   }
 };

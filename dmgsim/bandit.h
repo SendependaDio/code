@@ -3,8 +3,8 @@ using namespace std;
 
 class Bandit{
 public:
-  string name = "Бандит-чмо";
-  int HP = 20;
+  string name = "бандит-чмо";
+  int HP = 25;
   string weapon = "палка";
   int dmg = 1;
 
@@ -13,10 +13,6 @@ public:
     cout << "Количество HP: " << HP << ";" << endl;
     cout << "Оружие: " << weapon << ";" << endl;
     cout << "Урон: " << dmg << ";" << endl;
-  }
-
-  void relife(){
-    HP = 20;
   }
 
 };
