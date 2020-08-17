@@ -12,6 +12,9 @@
 using namespace std;
 
 Player objP;
+
+int num;
+
 void battle_func1();
 
 int main(){
@@ -63,10 +66,14 @@ int main(){
 
     cout << "Ладно, " << objP.name << " не будем забывать, что ты всё ещё днище.\n";
     cout << "Для начала, Я дам тебе самого слабейшего противника из этой части.";
-      Bandit objB;
+    num = 1;
       battle_func1();
+
       if(objP.HP > 0){
         cout << "Ладно, днище. Для первого раза не плохо." << endl;
+        cout << "Смотри, что могу. Вжух и у тебя уже полное HP." << endl;
+        objP.HP = 20;
+        cout << "HP: " << objP.HP << endl;
       }
 
       if(objP.HP <=0){
@@ -75,19 +82,55 @@ int main(){
         objP.HP = 20;
         cout << "HP: " << objP.HP << endl;
       }
+
+      cout << "\nЯ полагаю ты хочешь, чтобы тебя унизили.\n";
+      cout << "Что же, не смею препятствовать." << endl;
+      cout << "1)Бандит-чмо\n";
+      cout << "2)Бандит\n";
+      cout << "3)Бандит, который сделает тебя чмом\n";
+      cout << "4)Бандит, который тебя уничтожит" << endl;
+      cout << ">>";
+      cin >> num;
+      battle_func1();
   return 0;
 }
+
+//Функция, которая выводит процесс боя:
+
 
 void battle_func1(){
   random_device rd{};
   default_random_engine e{rd()}; //Создание генератора случайности
   uniform_int_distribution<int> d{1,2}; //Создание распределения с минимальным и максимальным значениями
-  //return d(e);
-  Bandit objB;
-  cout << "Твой противник: " << objB.name << ";" << endl;
-  cout << "Количество HP: " << objB.HP << ";" << endl;
-  cout << "Оружие: " << objB.weapon << ";" << endl;
-  cout << "Урон: " << objB.dmg << ";" << endl;
+Bandit objB;
+Bandit_Pro objBP;
+Bandit_Pro_Max objBPM;
+Ultra_Bandit_Pro_Max objUBPM;
+
+  switch(num){
+    case 1:{
+      objB.present();
+    }
+    break;
+
+    case 2:{
+    objBP.present();
+    }
+    break;
+
+    case 3:{
+    objBPM.present();
+    }
+    break;
+
+    case 4:{
+    objUBPM.present();
+    }
+    break;
+
+    default:
+    cout << "Ошибка" << endl;
+  }
 
   for(int i = 0; i < 35; ++i){
     cout << "=";
@@ -99,6 +142,7 @@ void battle_func1(){
 
   cout << endl;
   string answer;
+  if(num == 1){
   while(objB.HP > 0 && objP.HP > 0){
   cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
   cout << ">>";
@@ -144,4 +188,149 @@ void battle_func1(){
       cout << "Просто повезло, не зазнавайся." << endl;
     }
   }
+}
+  if(num ==2){
+  while(objBP.HP > 0 && objP.HP > 0){
+  cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
+  cout << ">>";
+    cin >> answer;
+
+    if(answer == "п"){
+      cout << "Ты пропустил ход. Ты идиот?" << endl;
+
+      if(d(e) == 1){
+        objP.HP -= objBP.dmg;
+        cout << "У тебя осталось " << objP.HP << " HP" << endl;
+      }
+      else{
+        cout << "Промах противника." << endl;
+      }
+    }
+    else
+    if(answer == "у"){
+      if(d(e) == 1){
+        objBP.HP -= objP.dmg;
+        cout << "У противника осталось " << objBP.HP << " HP" << endl;
+      }
+      else{
+        cout << "Промах." << endl;
+      }
+
+      if(d(e) == 1){
+        objP.HP -= objBP.dmg;
+        cout << "У тебя осталось " << objP.HP << " HP" << endl;
+      }
+      else{
+        cout << "Промах противника." << endl;
+      }
+    }
+
+    if(objP.HP <= 0){
+      cout << objP.name <<" к успеху шёл. Не получилось, не фортануло." << endl;
+      cout << objBP.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
+    }
+
+    if(objBP.HP <= 0){
+      cout << objBP.name << " отошёл в мир иной." << endl;
+      cout << "Просто повезло, не зазнавайся." << endl;
+    }
+  }
+}
+
+if(num == 3){
+while(objBPM.HP > 0 && objP.HP > 0){
+cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
+cout << ">>";
+  cin >> answer;
+
+  if(answer == "п"){
+    cout << "Ты пропустил ход. Ты идиот?" << endl;
+
+    if(d(e) == 1){
+      objP.HP -= objBPM.dmg;
+      cout << "У тебя осталось " << objP.HP << " HP" << endl;
+    }
+    else{
+      cout << "Промах противника." << endl;
+    }
+  }
+  else
+  if(answer == "у"){
+    if(d(e) == 1){
+      objBPM.HP -= objP.dmg;
+      cout << "У противника осталось " << objBPM.HP << " HP" << endl;
+    }
+    else{
+      cout << "Промах." << endl;
+    }
+
+    if(d(e) == 1){
+      objP.HP -= objBPM.dmg;
+      cout << "У тебя осталось " << objP.HP << " HP" << endl;
+    }
+    else{
+      cout << "Промах противника." << endl;
+    }
+  }
+
+  if(objP.HP <= 0){
+    cout << objP.name <<" к успеху шёл. Не получилось, не фортануло." << endl;
+    cout << objBPM.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
+  }
+
+  if(objBPM.HP <= 0){
+    cout << objBPM.name << " отошёл в мир иной." << endl;
+    cout << "Просто повезло, не зазнавайся." << endl;
+  }
+}
+}
+
+if(num == 4){
+while(objUBPM.HP > 0 && objP.HP > 0){
+cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
+cout << ">>";
+  cin >> answer;
+
+  if(answer == "п"){
+    cout << "Ты пропустил ход. Ты идиот?" << endl;
+
+    if(d(e) == 1){
+      objP.HP -= objUBPM.dmg;
+      cout << "У тебя осталось " << objP.HP << " HP" << endl;
+    }
+    else{
+      cout << "Промах противника." << endl;
+    }
+  }
+  else
+  if(answer == "у"){
+    if(d(e) == 1){
+      objUBPM.HP -= objP.dmg;
+      cout << "У противника осталось " << objUBPM.HP << " HP" << endl;
+    }
+    else{
+      cout << "Промах." << endl;
+    }
+
+    if(d(e) == 1){
+      objP.HP -= objUBPM.dmg;
+      cout << "У тебя осталось " << objP.HP << " HP" << endl;
+    }
+    else{
+      cout << "Промах противника." << endl;
+    }
+  }
+
+  if(objP.HP <= 0){
+    cout << objP.name <<" к успеху шёл. Не получилось, не фортануло." << endl;
+    cout << objUBPM.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
+  }
+
+  if(objUBPM.HP <= 0){
+    cout << objUBPM.name << " отошёл в мир иной." << endl;
+    cout << "Просто повезло, не зазнавайся." << endl;
+  }
+}
+}
+
 }
