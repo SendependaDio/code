@@ -8,6 +8,8 @@
 #include "bandit_pro_max.h"
 #include "ultra_bandit_pro_max.h"
 #include "battle1.h"
+#include "store.h"
+//#include "swtch_weapon_product.h"
 
 using namespace std;
 
@@ -19,11 +21,17 @@ Ultra_Bandit_Pro_Max objUBPM;
 int num;
 int lucky_num = 50;
 int elucky_num = 50;
-
+int choose_product;
+int choose_product_category;
 vector<int> Wallet;
+vector<string> Inventory;
+vector<string> Weapon_Store;
+vector<string>::iterator WepS;
+vector<string>::const_iterator CWepS;
 
 int main(){
-  vector<string> Inventory;
+//Wallet.push_back(10);
+  //store_menu();
 
   cout << "Добро пожаловать в Damage simulator!!!\n";
   cout << "Азъ есмъ бог всея этого симулятора.\n";
