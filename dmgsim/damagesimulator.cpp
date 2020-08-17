@@ -14,6 +14,7 @@ using namespace std;
 Player objP;
 
 int num;
+int lucky_num = 50;
 
 void battle_func1();
 
@@ -85,6 +86,9 @@ int main(){
 
       cout << "\nЯ полагаю ты хочешь, чтобы тебя унизили.\n";
       cout << "Что же, не смею препятствовать." << endl;
+      cout << "Только позволь, я повышу тебе удачу.\n";
+      cout << "Твой Мастер всё же существует, пока сущестуешь ты - днище." << endl;
+      lucky_num = 0;
       cout << "1)Бандит-чмо\n";
       cout << "2)Бандит\n";
       cout << "3)Бандит, который сделает тебя чмом\n";
@@ -101,7 +105,8 @@ int main(){
 void battle_func1(){
   random_device rd{};
   default_random_engine e{rd()}; //Создание генератора случайности
-  uniform_int_distribution<int> d{1,2}; //Создание распределения с минимальным и максимальным значениями
+  uniform_int_distribution<int> d{1,100}; //Создание распределения с минимальным и максимальным значениями
+
 Bandit objB;
 Bandit_Pro objBP;
 Bandit_Pro_Max objBPM;
@@ -135,13 +140,15 @@ Ultra_Bandit_Pro_Max objUBPM;
   for(int i = 0; i < 35; ++i){
     cout << "=";
   }
+
   cout << "\n";
   cout << "Количество твоего HP: " << objP.HP << ";" << endl;
   cout << "Твоё оружие: " << objP.weapon << ";" << endl;
   cout << "Твой урон: " << objP.dmg << ";" << endl;
-
   cout << endl;
+
   string answer;
+
   if(num == 1){
   while(objB.HP > 0 && objP.HP > 0){
   cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
@@ -151,7 +158,7 @@ Ultra_Bandit_Pro_Max objUBPM;
     if(answer == "п"){
       cout << "Ты пропустил ход. Ты идиот?" << endl;
 
-      if(d(e) == 1){
+      if(d(e) > 50){
         objP.HP -= objB.dmg;
         cout << "У тебя осталось " << objP.HP << " HP" << endl;
       }
@@ -161,7 +168,7 @@ Ultra_Bandit_Pro_Max objUBPM;
     }
     else
     if(answer == "у"){
-      if(d(e) == 1){
+      if(d(e) > lucky_num){
         objB.HP -= objP.dmg;
         cout << "У противника осталось " << objB.HP << " HP" << endl;
       }
@@ -169,7 +176,7 @@ Ultra_Bandit_Pro_Max objUBPM;
         cout << "Промах." << endl;
       }
 
-      if(d(e) == 1){
+      if(d(e) > 50){
         objP.HP -= objB.dmg;
         cout << "У тебя осталось " << objP.HP << " HP" << endl;
       }
@@ -198,7 +205,7 @@ Ultra_Bandit_Pro_Max objUBPM;
     if(answer == "п"){
       cout << "Ты пропустил ход. Ты идиот?" << endl;
 
-      if(d(e) == 1){
+      if(d(e) > 50){
         objP.HP -= objBP.dmg;
         cout << "У тебя осталось " << objP.HP << " HP" << endl;
       }
@@ -208,7 +215,7 @@ Ultra_Bandit_Pro_Max objUBPM;
     }
     else
     if(answer == "у"){
-      if(d(e) == 1){
+      if(d(e) > lucky_num){
         objBP.HP -= objP.dmg;
         cout << "У противника осталось " << objBP.HP << " HP" << endl;
       }
@@ -216,7 +223,7 @@ Ultra_Bandit_Pro_Max objUBPM;
         cout << "Промах." << endl;
       }
 
-      if(d(e) == 1){
+      if(d(e) > 50){
         objP.HP -= objBP.dmg;
         cout << "У тебя осталось " << objP.HP << " HP" << endl;
       }
@@ -246,7 +253,7 @@ cout << ">>";
   if(answer == "п"){
     cout << "Ты пропустил ход. Ты идиот?" << endl;
 
-    if(d(e) == 1){
+    if(d(e) > 50){
       objP.HP -= objBPM.dmg;
       cout << "У тебя осталось " << objP.HP << " HP" << endl;
     }
@@ -256,7 +263,7 @@ cout << ">>";
   }
   else
   if(answer == "у"){
-    if(d(e) == 1){
+    if(d(e) > lucky_num){
       objBPM.HP -= objP.dmg;
       cout << "У противника осталось " << objBPM.HP << " HP" << endl;
     }
@@ -264,7 +271,7 @@ cout << ">>";
       cout << "Промах." << endl;
     }
 
-    if(d(e) == 1){
+    if(d(e) > 50){
       objP.HP -= objBPM.dmg;
       cout << "У тебя осталось " << objP.HP << " HP" << endl;
     }
@@ -294,7 +301,7 @@ cout << ">>";
   if(answer == "п"){
     cout << "Ты пропустил ход. Ты идиот?" << endl;
 
-    if(d(e) == 1){
+    if(d(e) > 50){
       objP.HP -= objUBPM.dmg;
       cout << "У тебя осталось " << objP.HP << " HP" << endl;
     }
@@ -304,7 +311,7 @@ cout << ">>";
   }
   else
   if(answer == "у"){
-    if(d(e) == 1){
+    if(d(e) > lucky_num){
       objUBPM.HP -= objP.dmg;
       cout << "У противника осталось " << objUBPM.HP << " HP" << endl;
     }
@@ -312,7 +319,7 @@ cout << ">>";
       cout << "Промах." << endl;
     }
 
-    if(d(e) == 1){
+    if(d(e) > 50){
       objP.HP -= objUBPM.dmg;
       cout << "У тебя осталось " << objP.HP << " HP" << endl;
     }
