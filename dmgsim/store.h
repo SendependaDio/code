@@ -3,6 +3,7 @@ using namespace std;
 
 extern vector<int> Wallet;
 extern vector<string> Inventory;
+extern vector<string>::const_iterator inv;
 extern vector<string> Weapon_Store;
 extern vector<string>::iterator WepS;
 extern vector<string>::const_iterator CWepS;
@@ -21,7 +22,7 @@ void store_menu(){
   Weapon_Store.push_back("7)Испытанный клинок убийцы(16м)");
   Weapon_Store.push_back("8)Меч удачного наёмника(18м)");
 
-  for(int i = 0; i < 15; ++i){
+  for(int i = 0; i < 80; ++i){
     cout << "=";
   }
   cout << endl;
@@ -38,7 +39,7 @@ void store_menu(){
           cout << *CWepS;
           cout << endl;
         }
-        for(int i = 0; i < 15; ++i){
+        for(int i = 0; i < 80; ++i){
           cout << "-";
         }
         cout << endl;

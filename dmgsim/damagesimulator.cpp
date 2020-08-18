@@ -9,6 +9,8 @@
 #include "ultra_bandit_pro_max.h"
 #include "battle1.h"
 #include "store.h"
+#include "p_inventory.h"
+#include "equipment.h"
 //#include "swtch_weapon_product.h"
 
 using namespace std;
@@ -22,16 +24,24 @@ int num;
 int lucky_num = 50;
 int elucky_num = 50;
 int choose_product;
+string choose_weapon;
 int choose_product_category;
+int s_dmg;
+
 vector<int> Wallet;
 vector<string> Inventory;
+vector<string>::iterator inv_c;
+vector<string>::const_iterator inv;
 vector<string> Weapon_Store;
 vector<string>::iterator WepS;
 vector<string>::const_iterator CWepS;
 
 int main(){
-//Wallet.push_back(10);
-  //store_menu();
+  Wallet.push_back(10);
+  Inventory.push_back("бутылка для приседания");
+  store_menu();
+  player_inventory();
+  player_equipment();
 
   cout << "Добро пожаловать в Damage simulator!!!\n";
   cout << "Азъ есмъ бог всея этого симулятора.\n";
@@ -51,13 +61,13 @@ int main(){
     }
     else{
       cout << "Сам посуди. Ты только вошёл в игру.\n";
-      cout << "Оружия у тебя нет. Жизней не много." << endl;
+      //cout << "Оружия у тебя нет. Жизней не много." << endl;
     }
 
-    cout << "Чтобы ты в битве с первым противником не отправился к праотцам,\n";
-    cout << "Я дам тебе эту дубинку.\n";
-    Inventory.push_back("дубинка");
-    objP.weapon = "дубинка";
+    //cout << "Чтобы ты в битве с первым противником не отправился к праотцам,\n";
+    //cout << "Я дам тебе эту дубинку.\n";
+    //Inventory.push_back("дубинка");
+    //objP.weapon = "дубинка";
 
     if(Inventory[0] == "дубинка"){
       objP.dmg = 2;
