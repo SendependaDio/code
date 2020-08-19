@@ -1,8 +1,8 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <random>
-#include "player.h"
+#include <iostream> //подключаю стандартную библиотеку, позволяющую выводить и вводить текст в консоли
+#include <string> //подключаю стандартную библиотеку, позволяющую объявлять переменную типа string
+#include <vector> //подключаю библиотеку STL, позволяющую работать с векторами
+#include <random> //подключаю библиотеку, позволяющую добавить рандомчик
+#include "player.h" //подключаю собственную библиотеку
 #include "bandit.h"
 #include "bandit_pro.h"
 #include "bandit_pro_max.h"

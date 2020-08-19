@@ -1,11 +1,13 @@
 #include <iostream>
 #include <string>
 #include "cls.h"
-#include "show.h"
+//#include "cls.cpp"
 
 using namespace std;
 
 int main(){
-  show_Result();
+  Result obj;
+  obj.show_Result();
+  obj.read_Result();
   return 0;
 }
