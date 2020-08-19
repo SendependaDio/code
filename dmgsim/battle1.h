@@ -1,10 +1,16 @@
 using namespace std;
 
-extern Player objP;
-extern Bandit objB;
-extern Bandit_Pro objBP;
-extern Bandit_Pro_Max objBPM;
-extern Ultra_Bandit_Pro_Max objUBPM;
+ extern Player objP;
+ extern Enemy obj_evil1;
+ extern Enemy obj_evil2;
+ extern Enemy obj_evil3;
+ extern Enemy obj_evil4;
+/*extern Bandit objB;
+extern Bandit_Pro obj_evil2;
+extern Bandit_Pro_Max obj_evil3;
+extern Ultra_Bandit_Pro_Max obj_evil4;
+*/
+
 extern int num;
 extern int lucky_num;
 extern int elucky_num;
@@ -18,22 +24,22 @@ void battle_func1(){
 
   switch(num){
     case 1:{
-      objB.present();
+      obj_evil1.present_bandit();
     }
     break;
 
     case 2:{
-      objBP.present();
+      obj_evil2.present_bandit_pro();
     }
     break;
 
     case 3:{
-      objBPM.present();
+      obj_evil3.present_bandit_pro_max();
     }
     break;
 
     case 4:{
-      objUBPM.present();
+      obj_evil4.present_ultra_bandit_pro_max();
     }
     break;
 
@@ -41,7 +47,7 @@ void battle_func1(){
       cout << "Ошибка" << endl;
     }
 
-    for(int i = 0; i < 35; ++i){
+    for(int i = 0; i < 80; ++i){
       cout << "=";
     }
 
@@ -53,7 +59,7 @@ void battle_func1(){
 
     string answer;
       if(num == 1){
-        while(objB.HP > 0 && objP.HP > 0){
+        while(obj_evil1.HP > 0 && objP.HP > 0){
           cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
           cout << ">>";
             cin >> answer;
@@ -62,7 +68,7 @@ void battle_func1(){
               cout << "Ты пропустил ход. Ты идиот?" << endl;
 
               if(d(e) < elucky_num){
-                objP.HP -= objB.dmg;
+                objP.HP -= obj_evil1.dmg;
                 cout << "У тебя осталось " << objP.HP << " HP" << endl;
               }
               else{
@@ -72,15 +78,15 @@ void battle_func1(){
 
             if(answer == "у"){
               if(d(e) < lucky_num){
-                objB.HP -= objP.dmg;
-                cout << "У противника осталось " << objB.HP << " HP" << endl;
+                obj_evil1.HP -= objP.dmg;
+                cout << "У противника осталось " << obj_evil1.HP << " HP" << endl;
               }
               else{
                 cout << "Промах." << endl;
               }
 
               if(d(e) < elucky_num){
-                objP.HP -= objB.dmg;
+                objP.HP -= obj_evil1.dmg;
                 cout << "У тебя осталось " << objP.HP << " HP" << endl;
               }
               else{
@@ -90,11 +96,11 @@ void battle_func1(){
 
             if(objP.HP <= 0){
               cout << objP.name <<" к успеху шёл. Не получилось, не фортануло." << endl;
-              cout << objB.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
+              cout << obj_evil1.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
             }
 
-            if(objB.HP <= 0){
-              cout << objB.name << " отошёл в мир иной." << endl;
+            if(obj_evil1.HP <= 0){
+              cout << obj_evil1.name << " отошёл в мир иной." << endl;
               cout << "Просто повезло, не зазнавайся." << endl;
               cout << "Ты получил монетку." << endl;
               Wallet[0] +=1;
@@ -102,11 +108,11 @@ void battle_func1(){
               cout << "*У тебя " << Wallet[0] << " монет*" << endl;
             }
           }
-          objB.relife();
+          obj_evil1.relife_bandit();
         }
 
         if(num ==2){
-          while(objBP.HP > 0 && objP.HP > 0){
+          while(obj_evil2.HP > 0 && objP.HP > 0){
             cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
             cout << ">>";
               cin >> answer;
@@ -115,7 +121,7 @@ void battle_func1(){
                 cout << "Ты пропустил ход. Ты идиот?" << endl;
 
                 if(d(e) < elucky_num){
-                  objP.HP -= objBP.dmg;
+                  objP.HP -= obj_evil2.dmg;
                   cout << "У тебя осталось " << objP.HP << " HP" << endl;
                 }
                 else{
@@ -125,15 +131,15 @@ void battle_func1(){
 
               if(answer == "у"){
                 if(d(e) < lucky_num){
-                  objBP.HP -= objP.dmg;
-                  cout << "У противника осталось " << objBP.HP << " HP" << endl;
+                  obj_evil2.HP -= objP.dmg;
+                  cout << "У противника осталось " << obj_evil2.HP << " HP" << endl;
                 }
                 else{
                   cout << "Промах." << endl;
                 }
 
                 if(d(e) < elucky_num){
-                  objP.HP -= objBP.dmg;
+                  objP.HP -= obj_evil2.dmg;
                   cout << "У тебя осталось " << objP.HP << " HP" << endl;
                 }
                 else{
@@ -143,11 +149,11 @@ void battle_func1(){
 
               if(objP.HP <= 0){
                 cout << objP.name <<" к успеху шёл. Не получилось, не фортануло." << endl;
-                cout << objBP.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
+                cout << obj_evil2.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
               }
 
-              if(objBP.HP <= 0){
-                cout << objBP.name << " отошёл в мир иной." << endl;
+              if(obj_evil2.HP <= 0){
+                cout << obj_evil2.name << " отошёл в мир иной." << endl;
                 cout << "Просто повезло, не зазнавайся." << endl;
                 cout << "Ты получил 5 монеток." << endl;
                 Wallet[0] +=5;
@@ -155,11 +161,11 @@ void battle_func1(){
                 cout << "*У тебя " << Wallet[0] << " монет*" << endl;
               }
             }
-            objBP.relife();
+            obj_evil2.relife_bandit_pro();
           }
 
           if(num == 3){
-            while(objBPM.HP > 0 && objP.HP > 0){
+            while(obj_evil3.HP > 0 && objP.HP > 0){
               cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
               cout << ">>";
               cin >> answer;
@@ -168,7 +174,7 @@ void battle_func1(){
                 cout << "Ты пропустил ход. Ты идиот?" << endl;
 
                 if(d(e) < elucky_num){
-                  objP.HP -= objBPM.dmg;
+                  objP.HP -= obj_evil3.dmg;
                   cout << "У тебя осталось " << objP.HP << " HP" << endl;
                 }
                 else{
@@ -178,15 +184,15 @@ void battle_func1(){
 
               if(answer == "у"){
                 if(d(e) < lucky_num){
-                  objBPM.HP -= objP.dmg;
-                  cout << "У противника осталось " << objBPM.HP << " HP" << endl;
+                  obj_evil3.HP -= objP.dmg;
+                  cout << "У противника осталось " << obj_evil3.HP << " HP" << endl;
                 }
                 else{
                   cout << "Промах." << endl;
                 }
 
                 if(d(e) < elucky_num){
-                  objP.HP -= objBPM.dmg;
+                  objP.HP -= obj_evil3.dmg;
                   cout << "У тебя осталось " << objP.HP << " HP" << endl;
                 }
                 else{
@@ -196,11 +202,11 @@ void battle_func1(){
 
               if(objP.HP <= 0){
                 cout << objP.name <<" к успеху шёл. Не получилось, не фортануло." << endl;
-                cout << objBPM.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
+                cout << obj_evil3.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
               }
 
-              if(objBPM.HP <= 0){
-                cout << objBPM.name << " отошёл в мир иной." << endl;
+              if(obj_evil3.HP <= 0){
+                cout << obj_evil3.name << " отошёл в мир иной." << endl;
                 cout << "Просто повезло, не зазнавайся." << endl;
                 cout << "Ты получил 10 монеток." << endl;
                 Wallet[0] +=10;
@@ -208,11 +214,11 @@ void battle_func1(){
                 cout << "*У тебя " << Wallet[0] << " монет*" << endl;
               }
             }
-            objBPM.relife();
+            obj_evil3.relife_bandit_pro_max();
           }
 
           if(num == 4){
-            while(objUBPM.HP > 0 && objP.HP > 0){
+            while(obj_evil4.HP > 0 && objP.HP > 0){
               cout << "Ты хочешь нанести удар(у) или пропустить(п) ход?" << endl;
               cout << ">>";
               cin >> answer;
@@ -221,7 +227,7 @@ void battle_func1(){
                 cout << "Ты пропустил ход. Ты идиот?" << endl;
 
                 if(d(e) < elucky_num){
-                  objP.HP -= objUBPM.dmg;
+                  objP.HP -= obj_evil4.dmg;
                   cout << "У тебя осталось " << objP.HP << " HP" << endl;
                 }
                 else{
@@ -231,15 +237,15 @@ void battle_func1(){
 
               if(answer == "у"){
                 if(d(e) < lucky_num){
-                  objUBPM.HP -= objP.dmg;
-                  cout << "У противника осталось " << objUBPM.HP << " HP" << endl;
+                  obj_evil4.HP -= objP.dmg;
+                  cout << "У противника осталось " << obj_evil4.HP << " HP" << endl;
                 }
                 else{
                   cout << "Промах." << endl;
                 }
 
                 if(d(e) < elucky_num){
-                  objP.HP -= objUBPM.dmg;
+                  objP.HP -= obj_evil4.dmg;
                   cout << "У тебя осталось " << objP.HP << " HP" << endl;
                 }
                 else{
@@ -249,11 +255,11 @@ void battle_func1(){
 
               if(objP.HP <= 0){
                 cout << objP.name <<" к успеху шёл. Не получилось, не фортануло." << endl;
-                cout << objUBPM.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
+                cout << obj_evil4.name << " уничтожил тебя, как дешёвую дешёвку." << endl;
               }
 
-              if(objUBPM.HP <= 0){
-                cout << objUBPM.name << " отошёл в мир иной." << endl;
+              if(obj_evil4.HP <= 0){
+                cout << obj_evil4.name << " отошёл в мир иной." << endl;
                 cout << "Просто повезло, не зазнавайся." << endl;
                 cout << "Ты получил 15 монеток." << endl;
                 Wallet[0] +=15;
@@ -261,6 +267,8 @@ void battle_func1(){
                 cout << "*У тебя " << Wallet[0] << " монет*" << endl;
               }
             }
-            objB.relife();
+            obj_evil4.relife_ultra_bandit_pro_max();
           }
+
+
         }

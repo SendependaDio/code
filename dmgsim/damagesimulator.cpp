@@ -3,23 +3,31 @@
 #include <vector> //подключаю библиотеку STL, позволяющую работать с векторами
 #include <random> //подключаю библиотеку, позволяющую добавить рандомчик
 #include "player.h" //подключаю собственную библиотеку
-#include "bandit.h"
-#include "bandit_pro.h"
-#include "bandit_pro_max.h"
-#include "ultra_bandit_pro_max.h"
+//#include "bandit.h"
+//#include "bandit_pro.h"
+//#include "bandit_pro_max.h"
+//#include "ultra_bandit_pro_max.h"
+#include "enemy.h"
 #include "battle1.h"
 #include "store.h"
 #include "p_inventory.h"
 #include "equipment.h"
-//#include "swtch_weapon_product.h"
 
 using namespace std;
 
 Player objP;
+/*
 Bandit objB;
-Bandit_Pro objBP;
-Bandit_Pro_Max objBPM;
-Ultra_Bandit_Pro_Max objUBPM;
+Bandit_Pro obj_evil2;
+Bandit_Pro_Max obj_evil3;
+Ultra_Bandit_Pro_Max obj_evil4;
+*/
+Enemy obj_evil1;
+Enemy obj_evil2;
+Enemy obj_evil3;
+Enemy obj_evil4;
+
+
 int num;
 int lucky_num = 50;
 int elucky_num = 50;

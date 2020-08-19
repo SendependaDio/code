@@ -1,11 +1,10 @@
+
 #include <iostream>
 #include <string>
 #include "cls.h"
 using namespace std;
-/*Result::Result(){
-  show_Result();
-}
-*/
+
+
 void Result::show_Result(){
 
 
