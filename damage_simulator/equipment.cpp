@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "equipment.h"
 
 using namespace std;
@@ -6,7 +7,8 @@ using namespace std;
 void player_equipment(){
   cout << "Выбери, что хочешь экипировать:\n";
   cout << ">>";
-  cin >> choose_weapon;
+  cin.ignore();
+  getline(cin, choose_weapon);
 
   for(int i = 0; i < Inventory.size(); ++i){
     if(choose_weapon == Inventory[i]){

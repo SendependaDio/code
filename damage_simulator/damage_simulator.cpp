@@ -24,15 +24,14 @@ int choose_product;
 string choose_weapon;
 int choose_product_category;
 int s_dmg;
-
+string weapon;
 vector<int> Wallet;
 vector<string> Inventory;
 vector<string>::const_iterator s_iter;
 vector<string> Weapon_Store;
 
 int main(){
-  Wallet.push_back(10);
-  Inventory.push_back("бутылка для приседания");
+  Wallet.push_back(20);
   store_menu();
   player_inventory();
   player_equipment();
@@ -121,8 +120,8 @@ int main(){
         cout << ">>";
         cout << "*Ты получил зачарованный меч.*" << endl;
         objP.weapon = "зачарованный меч";
-        objP.HP = 100;
-        objP.dmg = 100;
+        objP.HP = 25;
+        objP.dmg = 20;
         for(int i = 0; i < 3; ++i){
           if(objP.HP > 0){
             cout << "1)Бандит-чмо;\n";

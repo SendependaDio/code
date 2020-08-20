@@ -1,6 +1,7 @@
 #ifndef STORE_H
 #define STORE_H
 #include <iostream>
+#include <string>
 #include <vector>
 #include "swtch_weapon_product.h"
 

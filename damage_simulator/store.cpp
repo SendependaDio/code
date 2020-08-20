@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "store.h"
 
 using namespace std;

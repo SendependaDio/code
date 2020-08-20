@@ -1,6 +1,7 @@
 #ifndef PLAYER_INVENTORY_H
 #define PLAYER_INVENTORY_H
 #include <iostream>
+#include <string>
 #include <vector>
 
 using namespace std;

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "swtch_weapon_product.h"
 
 using namespace std;
@@ -9,6 +10,7 @@ void swtch_weapon_product(){
       if(Wallet[0] >= 4){
         cout << "Ты приобрёл клинок." << endl;
         Inventory.push_back("клинок");
+        //weapon = "клинок";
         s_dmg = 5;
         Wallet[0] -=4;
       }
@@ -22,6 +24,7 @@ void swtch_weapon_product(){
       if(Wallet[0] >= 6){
         cout << "Ты приобрёл меч." << endl;
         Inventory.push_back("меч");
+        //weapon = "меч";
         s_dmg = 7;
         Wallet[0] -=6;
       }
@@ -35,6 +38,7 @@ void swtch_weapon_product(){
       if(Wallet[0] >= 8){
         cout << "Ты приобрёл острейший клинок." << endl;
         Inventory.push_back("острейший клинок");
+        //weapon = "острейший клинок";
         s_dmg = 10;
         Wallet[0] -= 8;
       }
@@ -48,6 +52,7 @@ void swtch_weapon_product(){
       if(Wallet[0] >= 10){
         cout << "Ты приобрёл острейший меч." << endl;
         Inventory.push_back("острейший меч");
+        //weapon = "острейший меч";
         s_dmg = 12;
         Wallet[0] -= 10;
       }
@@ -61,6 +66,7 @@ void swtch_weapon_product(){
       if(Wallet[0] >= 12){
         cout << "Ты приобрёл клинок убийцы." << endl;
         Inventory.push_back("клинок убийцы");
+        //weapon = "клинок убийцы";
         s_dmg = 15;
         Wallet[0] -= 12;
       }
@@ -74,6 +80,7 @@ void swtch_weapon_product(){
       if(Wallet[0] >= 14){
         cout << "Ты приобрёл меч наёмника." << endl;
         Inventory.push_back("меч наёмника");
+      //weapon = "меч наёмника";
         s_dmg = 17;
         Wallet[0] -=14;
       }
@@ -87,6 +94,7 @@ void swtch_weapon_product(){
       if(Wallet[0] >= 16){
         cout << "Ты приобрёл испытанный клинок убийцы." << endl;
         Inventory.push_back("испытанный клинок убийцы");
+        //weapon = "испытанный клинок убийцы";
         s_dmg = 20;
         Wallet[0] -= 16;
       }
@@ -100,6 +108,7 @@ void swtch_weapon_product(){
       if(Wallet[0] >= 18){
         cout << "Ты приобрёл меч удачного наёмника." << endl;
         Inventory.push_back("меч удачного наёмника");
+        //weapon = "меч удачного наёмника";
         s_dmg = 22;
         Wallet[0] -= 18;
       }

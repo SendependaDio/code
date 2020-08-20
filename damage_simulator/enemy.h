@@ -1,6 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 #include <iostream>
+#include <string>
 
 using namespace std;
 

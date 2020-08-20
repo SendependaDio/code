@@ -1,6 +1,7 @@
 #ifndef BATTLE1_H
 #define BATTLE1_H
 #include <iostream>
+#include <string>
 #include <vector>
 #include "player.h"
 #include "enemy.h"
