@@ -1,6 +1,7 @@
-using namespace std;
+#include <iostream>
+#include "equipment.h"
 
-extern string choose_weapon;
+using namespace std;
 
 void player_equipment(){
   cout << "Выбери, что хочешь экипировать:\n";

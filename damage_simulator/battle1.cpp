@@ -1,21 +1,10 @@
+
+#include <iostream>
+#include <string>
+#include <random>
+#include "battle1.h"
+
 using namespace std;
-
- extern Player objP;
- extern Enemy obj_evil1;
- extern Enemy obj_evil2;
- extern Enemy obj_evil3;
- extern Enemy obj_evil4;
-/*extern Bandit objB;
-extern Bandit_Pro obj_evil2;
-extern Bandit_Pro_Max obj_evil3;
-extern Ultra_Bandit_Pro_Max obj_evil4;
-*/
-
-extern int num;
-extern int lucky_num;
-extern int elucky_num;
-
-extern vector<int> Wallet;
 
 void battle_func1(){
   random_device rd{};
@@ -269,6 +258,4 @@ void battle_func1(){
             }
             obj_evil4.relife_ultra_bandit_pro_max();
           }
-
-
         }

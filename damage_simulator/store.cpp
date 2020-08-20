@@ -1,20 +1,11 @@
-#include "swtch_weapon_product.h"
+#include <iostream>
+#include "store.h"
+
 using namespace std;
-
-extern vector<int> Wallet;
-extern vector<string> Inventory;
-extern vector<string>::const_iterator inv;
-extern vector<string> Weapon_Store;
-extern vector<string>::iterator WepS;
-extern vector<string>::const_iterator CWepS;
-
-extern int choose_product;
-extern int choose_product_category;
-
 
 void store_menu(){
   Weapon_Store.push_back("1)Клинок(4м)");
-  Weapon_Store.push_back("2)Острый меч(6м)");
+  Weapon_Store.push_back("2)Меч(6м)");
   Weapon_Store.push_back("3)Острейший клинок(8м)");
   Weapon_Store.push_back("4)Острейший меч(10м)");
   Weapon_Store.push_back("5)Клинок убийцы(12м)");
@@ -35,8 +26,8 @@ void store_menu(){
     switch(choose_product_category){
       case 1:{
         cout << "Список:\n";
-        for(CWepS = Weapon_Store.begin(); CWepS != Weapon_Store.end(); ++CWepS){
-          cout << *CWepS;
+        for(s_iter = Weapon_Store.begin(); s_iter != Weapon_Store.end(); ++s_iter){
+          cout << *s_iter;
           cout << endl;
         }
         for(int i = 0; i < 80; ++i){

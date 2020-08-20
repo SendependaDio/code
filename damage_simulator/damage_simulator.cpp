@@ -3,30 +3,19 @@
 #include <vector> //подключаю библиотеку STL, позволяющую работать с векторами
 #include <random> //подключаю библиотеку, позволяющую добавить рандомчик
 #include "player.h" //подключаю собственную библиотеку
-//#include "bandit.h"
-//#include "bandit_pro.h"
-//#include "bandit_pro_max.h"
-//#include "ultra_bandit_pro_max.h"
 #include "enemy.h"
 #include "battle1.h"
 #include "store.h"
-#include "p_inventory.h"
+#include "player_inventory.h"
 #include "equipment.h"
 
 using namespace std;
 
 Player objP;
-/*
-Bandit objB;
-Bandit_Pro obj_evil2;
-Bandit_Pro_Max obj_evil3;
-Ultra_Bandit_Pro_Max obj_evil4;
-*/
 Enemy obj_evil1;
 Enemy obj_evil2;
 Enemy obj_evil3;
 Enemy obj_evil4;
-
 
 int num;
 int lucky_num = 50;
@@ -38,11 +27,8 @@ int s_dmg;
 
 vector<int> Wallet;
 vector<string> Inventory;
-vector<string>::iterator inv_c;
-vector<string>::const_iterator inv;
+vector<string>::const_iterator s_iter;
 vector<string> Weapon_Store;
-vector<string>::iterator WepS;
-vector<string>::const_iterator CWepS;
 
 int main(){
   Wallet.push_back(10);
@@ -87,7 +73,7 @@ int main(){
     cout << "С противников падают монетки. Чем сильнее противник,\n";
     cout << "тем больше шансов у тебя получить больше монеток." << endl;
     cout << "Так как ты нищие днище, Я пожертвую тебе 5 монеток." << endl;
-    Wallet.push_back(5);
+    Wallet[0] += 5;
     cout << ">>";
     cout << "*У тебя " << Wallet[0] << " монет*" << endl;
     cout << "Ладно, " << objP.name << " не будем забывать, что ты всё ещё днище.\n";
@@ -135,9 +121,9 @@ int main(){
         cout << ">>";
         cout << "*Ты получил зачарованный меч.*" << endl;
         objP.weapon = "зачарованный меч";
-        objP.HP = 25;
-        objP.dmg = 5;
-        for(int i = 0; i <= 3; ++i){
+        objP.HP = 100;
+        objP.dmg = 100;
+        for(int i = 0; i < 3; ++i){
           if(objP.HP > 0){
             cout << "1)Бандит-чмо;\n";
             cout << "2)Бандит;\n";
@@ -147,22 +133,12 @@ int main(){
               cin >> num;
               battle_func1();
           }
-        }
-
-        if(objP.HP > 0)
-        {
+          if(i == 3){
           cout << "Ты одолел 3 противников?!\n";
           cout << "Ты заслужил отдых.\n";
           cout << "Мир и без тебя не пропадёт." << endl;
-        }
-        else{
-          cout << "Раненный лев остаётся львом.\n";
-          cout << "А днище с мечом продолжает быть днищем." << endl;
+          }
         }
       }
-      else{
-        goto end;
-      }
-  end:
   return 0;
 }
