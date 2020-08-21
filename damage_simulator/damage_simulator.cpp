@@ -2,6 +2,8 @@
 #include <string> //подключаю стандартную библиотеку, позволяющую объявлять переменную типа string
 #include <vector> //подключаю библиотеку STL, позволяющую работать с векторами
 #include <random> //подключаю библиотеку, позволяющую добавить рандомчик
+#include <chrono>
+#include <thread>
 #include "player.h" //подключаю собственную библиотеку
 #include "enemy.h"
 #include "battle1.h"
@@ -37,19 +39,26 @@ int main(){
   player_equipment();
 
   cout << "Добро пожаловать в Damage simulator!!!\n";
+  this_thread::sleep_for(chrono::milliseconds(2000));
   cout << "Азъ есмъ бог всея этого симулятора.\n";
+  this_thread::sleep_for(chrono::milliseconds(3000));
   cout << "Можешь. Шучу. Будешь называть меня - Мастер." << endl;
+  this_thread::sleep_for(chrono::milliseconds(3000));
   cout << "Я даю тебе возможность ввести своё имя или ник.\n";
+  this_thread::sleep_for(chrono::milliseconds(3000));
   cout << "Воспользуйся ей. В ином случае тебе ничего не остаётся,\n";
+  this_thread::sleep_for(chrono::milliseconds(3000));
   cout << "кроме как закрыть это окно.\n";
   cout << ">>";
     cin >> objP.name;
     objP.HP = 20;
     cout << "Молодец, " << objP.name << "." << endl;
+    this_thread::sleep_for(chrono::milliseconds(3000));
     cout << objP.name << ", ты объективно днище." << endl;
 
     if(objP.name == "Данил"){
       cout << "Сома посуди. Ты только вошёл в игру.\n";
+      this_thread::sleep_for(chrono::milliseconds(3000));
       cout << "Оружия у тебя нет. Жизней не много. Кефир умер." << endl;
     }
     else{
