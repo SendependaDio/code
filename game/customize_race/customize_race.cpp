@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-
+#include "customize_race.h"
 using namespace std;
 
-int main(){
+void customize_race(){
   for(int i = 0; i < 80; ++i){
     cout << "#";
   }
@@ -28,10 +28,7 @@ int main(){
     cout << "-";
   }
 
-  string race;
   cout << ">>";
   getline(cin, race);
   cout << ">Выбрана раса: " << race << endl;
-
-  return 0;
 }

@@ -1,0 +1,4 @@
+/home/wholeks/github/main_folder/simple/ex_qt_ample.cpp:2:11: fatal error: gtk/gtk.h: Нет такого файла или каталога
+ # include <gtk/gtk.h>
+           ^~~~~~~~~~~
+compilation terminated.

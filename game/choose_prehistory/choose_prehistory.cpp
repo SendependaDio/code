@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-
+#include "choose_prehistory.h"
 using namespace std;
-int main(){
-  string choose_pre;
+
+void choose_prehistory(){
   for(int i = 0; i < 80; ++i){
     cout << "#";
   }
@@ -57,5 +57,4 @@ int main(){
     cout << ">>";
     getline(cin, choose_pre);
   }
-  return 0;
 }
