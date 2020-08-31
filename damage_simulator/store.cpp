@@ -42,8 +42,11 @@ void store_menu(){
       }
       break;
 
-      //case 2:
-      //break;
+      case 2:{
+        cout << "Что хочешь сделать?" << endl;
+        swtch_hp();
+      }
+      break;
 
       //case 3:
       //break;

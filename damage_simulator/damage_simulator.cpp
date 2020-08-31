@@ -8,6 +8,7 @@
 #include "enemy.h"
 #include "battle1.h"
 #include "store.h"
+//#include "swtch_HP_product.h"
 #include "player_inventory.h"
 #include "equipment.h"
 
@@ -33,6 +34,7 @@ vector<string>::const_iterator s_iter;
 vector<string> Weapon_Store;
 
 int main(){
+  objP.HP = 20;
   Wallet.push_back(20);
   store_menu();
   player_inventory();
@@ -51,7 +53,6 @@ int main(){
   cout << "кроме как закрыть это окно.\n";
   cout << ">>";
     cin >> objP.name;
-    objP.HP = 20;
     cout << "Молодец, " << objP.name << "." << endl;
     this_thread::sleep_for(chrono::milliseconds(3000));
     cout << objP.name << ", ты объективно днище." << endl;
@@ -63,13 +64,13 @@ int main(){
     }
     else{
       cout << "Сам посуди. Ты только вошёл в игру.\n";
-      //cout << "Оружия у тебя нет. Жизней не много." << endl;
+      cout << "Оружия у тебя нет. Жизней не много." << endl;
     }
 
-    //cout << "Чтобы ты в битве с первым противником не отправился к праотцам,\n";
-    //cout << "Я дам тебе эту дубинку.\n";
-    //Inventory.push_back("дубинка");
-    //objP.weapon = "дубинка";
+    cout << "Чтобы ты в битве с первым противником не отправился к праотцам,\n";
+    cout << "Я дам тебе эту дубинку.\n";
+    Inventory.push_back("дубинка");
+    objP.weapon = "дубинка";
 
     if(Inventory[0] == "дубинка"){
       objP.dmg = 2;
